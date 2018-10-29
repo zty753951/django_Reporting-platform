@@ -1,0 +1,18 @@
+.navbar{
+	margin-bottom:0;
+}
+.navbar-brand {
+    padding: 1px;
+}
+.pages_con{
+	position:fixed;
+	left:0;
+	top:100px;
+	width:100%;
+	overflow:hidden;	
+}
+.jumbotron {
+    background-color: #fff;
+	padding:0;
+	margin:0;	
+}

@@ -1,0 +1,217 @@
+{% load static %}
+<html>
+<meta charset="utf-8">
+<title>YinGu_BigData</title>
+
+	<script type="text/javascript" src="{% static '/js/jquery-3.3.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static '/js/jquery.mousewheel.min.js' %}"></script>
+	<script type="text/javascript" src="{% static '/js/bootstrap.min.js' %}"></script>
+    <script type='text/javascript' src='http://192.165.6.217:8000/javascripts/api/viz_v1.js'></script>
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static '/css/bootstrap.min.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static '/css/index.css' %}">
+    <script type="text/javascript">
+        $(function(){
+            var $navigation_h = $('#navigation').height();
+            var $window_h = $(window).height();
+            var $points = $('#points li');
+            $('.jumbotron').css({height:$window_h-$navigation_h});
+
+            $points.click(function(event) {
+				var nowindex = $(this).index();
+				$('.pages_con').animate({top:-($window_h-$navigation_h)*nowindex+100},200);
+                 return false;
+			    });
+
+        })
+    </script>
+
+</html>
+
+<body>
+
+	<div class="navbar navbar-inverse navbar-static-top" id="navigation">
+        <div class="container">
+            <div class="navbar-header">
+                <button class="navbar-toggle" data-toggle="=collapse" data-target="#report_menu">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+
+                <a href="#" class="navbar-brand">
+                    <img src="{% static '/images/yingulogo.jpg' %}" alt="银谷普诚logo">
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="report_menu">
+                <ul class="nav navbar-nav" id="points">
+                    <li><a href="" id="link_reportday1">进件量情况</a></li>
+                    <li><a href="" id="link_reportday2">分中心逾期</a></li>
+                    <li><a href="" id="link_reportday3">城市放款逾期情况</a></li>
+                    <li><a href="" id="link_reportday4">借款金额分布</a></li>
+                    <li><a href="" id="link_reportday5">近三十天件均</a></li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="pages_con">
+
+{#        <div class="jumbotron">#}
+{#              <div class="container">#}
+{#                  <div class="row">#}
+{#                    <div class="col-lg-3 ">#}
+{#                        <h3>进件量情况：</h3>#}
+{#                        <p>近期进件量情况</p>#}
+{#                    </div>#}
+{#                    <div class="col-lg-6 col-lg-offset-1">#}
+{#                        <img src="{% static '/images/进件量情况.png' %}">#}
+{#                    </div>#}
+{#                  </div>#}
+{#              </div>#}
+{#        </div>#}
+{##}
+{#        <div class="jumbotron">#}
+{#              <div class="container">#}
+{#                  <div class="row">#}
+{#                    <div class="col-lg-3 ">#}
+{#                        <!--<div class="banner_title">-->#}
+{#                            <!--<img src="images/yuqi2.jpg">-->#}
+{#                        <!--</div>-->#}
+{#                        <h3>借款金额情况：</h3>#}
+{#                        <p>近期借款金额情况</p>#}
+{##}
+{#                    </div>#}
+{#                    <div class="col-lg-6 col-lg-offset-1">#}
+{#                        <img src="{% static '/images/借款金额.png' %}">#}
+{#                    </div>#}
+{#                  </div>#}
+{#              </div>#}
+{#        </div>#}
+{##}
+{#        <div class="jumbotron">#}
+{#              <div class="container">#}
+{#                  <div class="row">#}
+{#                    <div class="col-lg-3 ">#}
+{#                        <!--<div class="banner_title">-->#}
+{#                            <!--<img src="images/yuqi2.jpg">-->#}
+{#                        <!--</div>-->#}
+{#                        <h3>放款金额：</h3>#}
+{#                        <p>近期放款金额情况</p>#}
+{##}
+{#                    </div>#}
+{#                    <div class="col-lg-6 col-lg-offset-1">#}
+{#                        <img src="{% static '/images/放款金额.png' %}">#}
+{#                    </div>#}
+{#                  </div>#}
+{#              </div>#}
+{#        </div>#}
+
+
+{#       进件量#}
+        <div class="jumbotron" style="overflow: auto">
+
+            <div class='tableauPlaceholder' style='width: 1920px; height: 827px;'>
+                <object class='tableauViz' width='1920' height='827' style='display:none;'>
+                    <param name='host_url' value='http%3A%2F%2F192.165.6.217%3A8000%2F' />
+                    <param name='embed_code_version' value='3' />
+                    <param name='site_root' value='' />
+                    <param name='name' value='_0&#47;sheet0' />
+                    <param name='tabs' value='no' />
+                    <param name='toolbar' value='yes' />
+                    <param name='showAppBanner' value='false' />
+                    <param name='filter' value='iframeSizedToWindow=true' />
+                </object>
+            </div>
+
+        </div>
+{#        分中心逾期#}
+        <div class="jumbotron">
+              <div class="container">
+                  <div class="row">
+                    <div class="col-lg-3 ">
+                        <h3>逾期介绍：</h3>
+                        <p>截止至目前各地逾期情况</p>
+                    </div>
+                    <div class="col-lg-6 col-lg-offset-1">
+                        <img src="{% static '/images/逾期.jpg' %}">
+                    </div>
+                  </div>
+              </div>
+        </div>
+
+{#        城市逾期#}
+        <div class="jumbotron" style="overflow: auto">
+
+             <div class='tableauPlaceholder' style='width: 1920px; height: 821px;'>
+                 <object class='tableauViz' width='1920' height='821' style='display:none;'>
+                     <param name='host_url' value='http%3A%2F%2F192.165.6.217%3A8000%2F' />
+                     <param name='embed_code_version' value='3' />
+                     <param name='site_root' value='' />
+                     <param name='name' value='_0&#47;sheet5' />
+                     <param name='tabs' value='no' />
+                     <param name='toolbar' value='yes' />
+                     <param name='showAppBanner' value='false' />
+                     <param name='filter' value='iframeSizedToWindow=true' />
+                 </object>
+             </div>
+
+        </div>
+{#        借款金额分布#}
+        <div class="jumbotron" style="overflow: auto">
+
+             <div class='tableauPlaceholder' style='width: 1920px; height: 821px;'>
+                 <object class='tableauViz' width='1920' height='821' style='display:none;'>
+                     <param name='host_url' value='http%3A%2F%2F192.165.6.217%3A8000%2F' />
+                     <param name='embed_code_version' value='3' />
+                     <param name='site_root' value='' />
+                     <param name='name' value='_0&#47;sheet3' />
+                     <param name='tabs' value='no' />
+                     <param name='toolbar' value='yes' />
+                     <param name='showAppBanner' value='false' />
+                     <param name='filter' value='iframeSizedToWindow=true' />
+                 </object>
+             </div>
+
+        </div>
+{#        近三十天件均#}
+        <div class="jumbotron" style="overflow: auto">
+
+             <div class='tableauPlaceholder' style='width: 1920px; height: 821px;'>
+                 <object class='tableauViz' width='1920' height='821' style='display:none;'>
+                     <param name='host_url' value='http%3A%2F%2F192.165.6.217%3A8000%2F' />
+                     <param name='embed_code_version' value='3' />
+                     <param name='site_root' value='' />
+                     <param name='name' value='_0&#47;sheet4' />
+                     <param name='tabs' value='no' />
+                     <param name='toolbar' value='yes' />
+                     <param name='showAppBanner' value='false' />
+                     <param name='filter' value='iframeSizedToWindow=true' />
+                 </object>
+             </div>
+
+        </div>
+
+    </div>
+
+
+</body>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
